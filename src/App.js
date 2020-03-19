@@ -11,7 +11,13 @@ import ShoppingCart from "./components/ShoppingCart";
 
 function App() {
   const [products] = useState(data);
-  const [cart, setCart] = useState([]);
+  const [cart, setCart] = useState(
+    window.localStorage.getItem("cart")
+      ? JSON.parse(window.localStorage.getItem("cart"))
+      : []
+  );
+
+  window.localStorage.setItem("cart", JSON.stringify(cart));
 
   const addItem = item => {
     // add the given item to the cart
