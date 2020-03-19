@@ -5,7 +5,7 @@ import { CartContext } from "../contexts/CartContext";
 const Navigation = () => {
   const cart = useContext(CartContext);
 
-  console.log(cart);
+  console.log("This is from inside the Navigation.js File", cart);
 
   return (
     <div className="navigation">
